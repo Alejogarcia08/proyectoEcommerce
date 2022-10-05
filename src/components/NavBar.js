@@ -1,24 +1,27 @@
-import './CartWidget'
-import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom';
+import './CartWidget';
+import CartWidget from './CartWidget';
+import Sani from '../recursos/Sani.png';
 
 const NavBar = () => {
     return (
         <>
             <div className="navbar bg-base-100">
-                <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-xl">Sanibon</a>
-                </div>
-                
+                <Link to={'/'} className="flex-1">
+                <img src={Sani} className='w-30 h-14 ' />
+                    {/* <Link to={'/'} src={Sani} className="btn btn-ghost normal-case text-xl">Sanibon</Link> */}
+                </Link>
+
                 <ul className="menu menu-horizontal p-0 ">
                     {/* <li><a>Teinda</a></li> */}
                     <li tabIndex={0}>
-                        <a>
+                        <Link to={'/Tienda'}>
                             Tienda
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                        </a>
+                        </Link>
                         <ul className="p-2 bg-base-100">
-                            <li><a>AquaSistem</a></li>
-                            <li><a>Sigas</a></li>
+                            <li><Link to={'/aquaSistem'}>AquaSistem</Link></li>
+                            <li><Link to={'/sigas'}>Sigas</Link></li>
                         </ul>
                     </li>
                     {/* <li><a>Item 3</a></li> */}
