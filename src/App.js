@@ -3,16 +3,21 @@ import './App.css';
 import './components/NavBar';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import ItemListContainer from './components/ItemListContainer';
+import ListContainer from './components/ListContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './paginas/Home';
-import Tienda from './category/Tienda';
-import AquaSistem from './category/categoryAquaSistem/AquaSistem';
-import Sigas from './category/categorySigas/Sigas';
-import CodoNormalSigas from './category/categorySigas/productsSigas/CodoNormalSigas';
+import Home from './pages/Home';
+import Tienda from './pages/Tienda';
+import AquaSistem from './pages/AquaSistem';
+import Sigas from './pages/Sigas';
+import Cart from './pages/Cart';
+import { CartContextProvider } from './context/cartContext';
+import ItemDetail from './components/ItemDetail';
+
+
 
 function App() {
   return (<>
+  <CartContextProvider>
   <BrowserRouter>
     <NavBar/>
     
@@ -20,15 +25,18 @@ function App() {
 
       <Route path={'/'} element={<Home/>} ></Route>
       {/* //Tienda */}
-      <Route path={'/Tienda'} element={<Tienda/>} ></Route>
-      <Route path={'/AquaSistem'} element={<AquaSistem/>} ></Route>
-      <Route path={'/Sigas'} element={<Sigas/>} ></Route>
-      <Route path={'/CodoNormalSigas'} element={<CodoNormalSigas/>} ></Route>
-
+      
+      <Route path={'/Tienda'} element={<ListContainer/>} ></Route>
+      {/* <Route path={'/AquaSistem'} element={<AquaSistem/>} ></Route>
+      <Route path={'/Sigas'} element={<Sigas/>} ></Route> */}
+      <Route path={'/Cart'} element={<Cart/>} ></Route>
+      <Route path='/ListContainer' element={<ListContainer/>} />
+      <Route path='/ItemDetail/:id' element={<ItemDetail/>} />
+      
     </Routes>
     <Footer/>
   </BrowserRouter>
-      
+      </CartContextProvider>
     <div className="App">
       <header className="App-header">
       

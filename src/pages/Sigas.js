@@ -30,12 +30,15 @@ const products = [
         price: '$950',
         imageSrc: 'http://grupodema.com.ar/uploads/documents/18653dbb75cfa042b0f9d834d87a1efbdefcd4df.jpeg',
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+
     },
+
     // More products...
 ]
 
 export default function Sigas() {
     return (
+
         <div className="bg-white">
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <h2 className="sr-only">Productos</h2>
@@ -59,3 +62,4 @@ export default function Sigas() {
         </div>
     )
 }
+
