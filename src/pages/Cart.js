@@ -6,15 +6,7 @@ import { useCart } from '../context/cartContext'
 const Cart = () => {
 
 
-    const ItemTotal = () => {
-        const total = 0
-        products.forEach(prod => {
-            total = total = (prod.stock * prod.price)
-        })
-        return total
 
-        
-    }
 
 
     const { products, clearCart } = useCart()
@@ -55,9 +47,7 @@ const Cart = () => {
             <br />
 
             <button onClick={clearCart} className="btn btn-outline btn-error">Limpiar carrito</button>
-            <div>
-                <li>$ {ItemTotal()}</li>
-            </div>
+
 
         </div >
     )

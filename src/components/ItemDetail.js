@@ -26,6 +26,7 @@ const ItemDetail = () => {
 
     const addHandler = () => {
         addToCart(product)
+        alert ("Agregaste al Carrito")
     }
 
     return (
@@ -40,7 +41,7 @@ const ItemDetail = () => {
             <figure><img src={product.img} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{product.name}</h2>
-                <p>Click the button to listen on Spotiwhy app.</p>
+
                 <div className="card-actions justify-start">
                     <button className="btn btn-outline btn-success" onClick={addHandler}>Agregar al Carrito</button>
                 </div>
